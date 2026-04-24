@@ -5,6 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hizmetlerimiz | ARSLAN Hukuk ve Danışmanlık</title>
     <meta name="description" content="Ceza Hukuku, Aile Hukuku, İdare Hukuku ve İş Hukuku dahil olmak üzere sunduğumuz detaylı yasal danışmanlık ve dava vekilliği hizmetleri.">
+    <meta name="keywords" content="eskişehir ceza avukatı, eskişehir ağır ceza, eskişehir aile hukuku avukatı, eskişehir idare hukuku, hukuki danışmanlık eskişehir">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.arslanhukukdanismanlik.com.tr/hizmetlerimiz.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hizmetlerimiz | ARSLAN Hukuk ve Danışmanlık">
+    <meta property="og:description" content="Ceza Hukuku, Aile Hukuku, İdare Hukuku ve İş Hukuku dahil olmak üzere sunduğumuz detaylı yasal danışmanlık ve dava vekilliği hizmetleri.">
+    <meta property="og:image" content="https://www.arslanhukukdanismanlik.com.tr/assets/logo.png">
+    <meta property="og:url" content="https://www.arslanhukukdanismanlik.com.tr/hizmetlerimiz.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "ARSLAN Hukuk ve Danışmanlık",
+      "image": "https://www.arslanhukukdanismanlik.com.tr/assets/logo.png",
+      "url": "https://www.arslanhukukdanismanlik.com.tr/",
+      "telephone": "+905366421458",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kurtuluş Mahallesi, Cumhuriyet Bulvarı, No: 63 Kat: 3 Daire: 5, Sivriler Plaza",
+        "addressLocality": "Odunpazarı",
+        "addressRegion": "Eskişehir",
+        "addressCountry": "TR"
+      },
+      "areaServed": "Eskişehir",
+      "keywords": "eskişehir ceza avukatı, ağır ceza avukatı eskişehir, eskişehir hukuk bürosu"
+    }
+    </script>
+    <!-- Google Fonts (preconnect for speed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- FontAwesome -->
@@ -36,6 +70,14 @@
                         <li class="nav-item"><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
                         <li class="nav-item"><a href="ekibimiz.html" class="nav-link">Ekibimiz</a></li>
                         <li class="nav-item"><a href="hizmetlerimiz.html" class="nav-link active">Hizmetlerimiz</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="yayinlarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Yayınlar</a>
+                            <ul class="dropdown-menu" aria-labelledby="yayinlarDropdown">
+                                <li><a class="dropdown-item" href="makaleler.html">Makaleler</a></li>
+                                <li><a class="dropdown-item" href="emsal-kararlar.html">Emsal Kararlar</a></li>
+                                <li><a class="dropdown-item" href="haberler.html">Haberler</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a href="iletisim.html" class="nav-link">İletişim</a></li>
                     </ul>
                 </div>
@@ -64,7 +106,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="service-card h-100">
                             <div class="service-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600&h=400" alt="Ceza Hukuku">
+                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600&h=400" alt="Ceza Hukuku" loading="lazy">
                             </div>
                             <i class="fa-solid fa-gavel service-icon"></i>
                             <h3>Ceza Hukuku</h3>
@@ -75,7 +117,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="service-card h-100">
                             <div class="service-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600&h=400" alt="Aile ve Miras Hukuku">
+                                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600&h=400" alt="Aile ve Miras Hukuku" loading="lazy">
                             </div>
                             <i class="fa-solid fa-children service-icon"></i>
                             <h3>Aile ve Miras Hukuku</h3>
@@ -86,29 +128,51 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="service-card h-100">
                             <div class="service-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600&h=400" alt="İdare ve Vergi Hukuku">
+                                <img src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?auto=format&fit=crop&q=80&w=600&h=400" alt="İdare Hukuku" loading="lazy">
                             </div>
                             <i class="fa-solid fa-building-columns service-icon"></i>
-                            <h3>İdare ve Vergi Hukuku</h3>
-                            <p>İdari iptal davaları, tam yargı davaları, memur davaları ve vergi uyuşmazlıkları konularında, kamu kurumlarına karşı bireylerin ve şirketlerin haklarının korunmasına yönelik hukuki destek veriyoruz.</p>
+                            <h3>İdare Hukuku</h3>
+                            <p>İdari iptal davaları, tam yargı davaları, memur davaları ve disiplin süreçleri ile yürütmenin durdurulması taleplerinde kamu kurumlarına karşı bireylerin ve şirketlerin haklarını kararlılıkla savunuyoruz.</p>
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6">
                         <div class="service-card h-100">
                             <div class="service-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600&h=400" alt="İş ve Sosyal Güvenlik Hukuku">
+                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600&h=400" alt="Vergi Hukuku" loading="lazy">
+                            </div>
+                            <i class="fa-solid fa-receipt service-icon"></i>
+                            <h3>Vergi Hukuku</h3>
+                            <p>Vergi tarhiyatlarına itiraz, vergi cezalarının kaldırılması, uzlaşma ve pişmanlık prosedürleri ile vergi mahkemelerinde dava takibi konularında etkin ve sonuç odaklı hukuki temsil sağlıyoruz.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card h-100">
+                            <div class="service-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600&h=400" alt="İş Hukuku" loading="lazy">
                             </div>
                             <i class="fa-solid fa-handshake-angle service-icon"></i>
-                            <h3>İş ve Sosyal Güvenlik Hukuku</h3>
-                            <p>İşe iade davaları, kıdem ve ihbar tazminatı alacağı davaları, iş kazalarından doğan tazminat talepleri ve işçi-işveren arasındaki arabuluculuk süreçlerinde profesyonel temsil sağlıyoruz.</p>
+                            <h3>İş Hukuku</h3>
+                            <p>İşe iade davaları, kıdem ve ihbar tazminatı alacağı davaları, iş kazalarından doğan tazminat talepleri ve işçi-işveren uyuşmazlıklarında zorunlu arabuluculuk ile yargılama süreçlerinde profesyonel temsil sağlıyoruz.</p>
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6">
                         <div class="service-card h-100">
                             <div class="service-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&q=80&w=600&h=400" alt="Bireysel Başvurular, İstinaf ve Temyiz">
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600&h=400" alt="Sosyal Güvenlik Hukuku" loading="lazy">
+                            </div>
+                            <i class="fa-solid fa-shield-halved service-icon"></i>
+                            <h3>Sosyal Güvenlik Hukuku</h3>
+                            <p>SGK prim uyuşmazlıkları, emeklilik hakkı itirazları, iş kazası ve meslek hastalığı tazminat süreçleri ile SGK denetim kararlarına yönelik hukuki itiraz ve dava takibi hizmetleri sunuyoruz.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card h-100">
+                            <div class="service-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&q=80&w=600&h=400" alt="Bireysel Başvurular, İstinaf ve Temyiz" loading="lazy">
                             </div>
                             <i class="fa-solid fa-file-contract service-icon"></i>
                             <h3>Bireysel Başvurular, İstinaf ve Temyiz</h3>
@@ -119,7 +183,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="service-card h-100">
                             <div class="service-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600&h=400" alt="Sigorta Hukuku">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600&h=400" alt="Sigorta Hukuku" loading="lazy">
                             </div>
                             <i class="fa-solid fa-car-burst service-icon"></i>
                             <h3>Sigorta Hukuku</h3>
@@ -130,7 +194,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="service-card h-100">
                             <div class="service-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600&h=400" alt="Ticaret Hukuku">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600&h=400" alt="Ticaret Hukuku" loading="lazy">
                             </div>
                             <i class="fa-solid fa-chart-line service-icon"></i>
                             <h3>Ticaret Hukuku</h3>
@@ -141,11 +205,22 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="service-card h-100">
                             <div class="service-img-wrapper">
-                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600&h=400" alt="Şirketler Hukuku">
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600&h=400" alt="Şirketler Hukuku" loading="lazy">
                             </div>
                             <i class="fa-solid fa-building service-icon"></i>
                             <h3>Şirketler Hukuku</h3>
                             <p>Şirket kuruluşları, ana sözleşme tadilleri, olağan/olağanüstü genel kurul işlemleri, birleşme ve devralmalar ile şirket ortakları arası uyuşmazlıklarda kurumsal hukuki danışmanlık.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card h-100">
+                            <div class="service-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?auto=format&fit=crop&q=80&w=600&h=400" alt="Uluslararası Ceza Hukuku" loading="lazy">
+                            </div>
+                            <i class="fa-solid fa-earth-europe service-icon"></i>
+                            <h3>Uluslararası Ceza Hukuku</h3>
+                            <p>Sınır ötesi ceza uyuşmazlıkları, iade talepleri ve uluslararası tutukluluk süreçleri ile AİHM nezdinde bireysel başvurular ve insan hakları ihlali davalarında kapsamlı hukuki temsil ve danışmanlık hizmetleri sunuyoruz.</p>
                         </div>
                     </div>
                 </div>
@@ -173,6 +248,9 @@
                             <li><a href="hakkimizda.html">Hakkımızda</a></li>
                             <li><a href="ekibimiz.html">Ekibimiz</a></li>
                             <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+                            <li><a href="makaleler.html">Makaleler</a></li>
+                            <li><a href="emsal-kararlar.html">Emsal Kararlar</a></li>
+                            <li><a href="haberler.html">Haberler</a></li>
                             <li><a href="iletisim.html">İletişim</a></li>
                         </ul>
                     </div>
@@ -181,7 +259,9 @@
                     <div class="footer-social">
                         <h4>Bize Ulaşın</h4>
                         <ul style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
-                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-phone" style="color: var(--accent-color); margin-right: 10px;"></i> +90 555 123 45 67</li>
+                            <li style="margin-bottom: 10px; line-height: 1.5;"><i class="fa-solid fa-location-dot" style="color: var(--accent-color); margin-right: 10px;"></i> Kurtuluş Mah. Cumhuriyet Bulv. No:63<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kat:3 Daire:5 Odunpazarı/Eskişehir</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-phone" style="color: var(--accent-color); margin-right: 10px;"></i> 0222 479 26 69</li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-mobile-screen" style="color: var(--accent-color); margin-right: 10px;"></i> +90 536 642 14 58 / +90 546 226 40 87</li>
                             <li><i class="fa-solid fa-envelope" style="color: var(--accent-color); margin-right: 10px;"></i> info@arslanhukuk.com</li>
                         </ul>
                         <div class="social-icons">
@@ -197,17 +277,19 @@
                 Bu site, Türkiye Barolar Birliği Reklam Yasağı Yönetmeliği'nin ilgili maddelerine uygun olarak düzenlenmiş olup, reklam amacı taşımaz. 
                 Sitede paylaşılan bilgiler hukuki mütalaa veya tavsiye niteliğinde değildir.
                 &copy; 2026 Arslan Hukuk ve Danışmanlık. Tüm Hakları Saklıdır.
+                &nbsp;|&nbsp; <a href="kvkk.html" style="color: var(--accent-color);">KVKK Aydınlatma Metni</a>
+                &nbsp;|&nbsp; <a href="cerez-politikasi.html" style="color: var(--accent-color);">Çerez Politikası</a>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/905551234567" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp İletişim">
+    <a href="https://wa.me/905462264087" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp İletişim">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

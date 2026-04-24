@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+/* Google Fonts are loaded via <link> in HTML for better performance */
+
 
 :root {
     --primary-color: #0d1b2a;
@@ -29,7 +30,12 @@ body {
     background-repeat: no-repeat;
     color: var(--text-main);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
 }
 
 h1,
@@ -63,7 +69,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    padding: 0;
+    padding: max(15px, env(safe-area-inset-top)) 0 15px 0;
     transition: var(--transition);
     background: transparent;
 }
@@ -71,7 +77,8 @@ header {
 header.scrolled {
     background: rgba(13, 27, 42, 0.97);
     backdrop-filter: blur(12px);
-    padding: 0;
+    -webkit-backdrop-filter: blur(12px);
+    padding: max(10px, env(safe-area-inset-top)) 0 10px 0;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -100,6 +107,8 @@ header.scrolled {
 .logo-img {
     height: 108px;
     width: auto;
+    max-width: 100%;
+    object-fit: contain;
     flex-shrink: 0;
     filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
     transition: filter 0.3s ease, transform 0.3s ease;
@@ -732,6 +741,13 @@ footer {
    TABLET (≤992px)
    ============================================= */
 @media (max-width: 991.98px) {
+    .logo-img {
+        height: 85px;
+    }
+    footer .logo-img {
+        height: 110px;
+    }
+
     body {
         background-attachment: scroll;
     }
@@ -758,6 +774,17 @@ footer {
    MOBİL (≤768px)
    ============================================= */
 @media (max-width: 767.98px) {
+    .logo-img {
+        height: 70px;
+    }
+    footer .logo-img {
+        height: 90px;
+    }
+
+    .hamburger {
+        margin-left: auto;
+    }
+
     .hero {
         text-align: center;
     }
@@ -810,6 +837,13 @@ footer {
    KÜÇÜK MOBİL (≤480px)
    ============================================= */
 @media (max-width: 480px) {
+    .logo-img {
+        height: 55px;
+    }
+    footer .logo-img {
+        height: 75px;
+    }
+
     .hero h1 {
         font-size: 1.85rem;
     }
@@ -933,24 +967,781 @@ footer {
 
 @media (max-width: 767.98px) {
     .whatsapp-float {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
         bottom: 20px;
-        right: 20px;
-        font-size: 28px;
+        right: 15px;
+        font-size: 30px;
     }
-    .whatsapp-float::before {
-        right: 65px;
-        padding: 8px 14px;
-        font-size: 0.85rem;
-    }
+    /* Hide text bubble completely on mobile screens to save space and prevent overflow */
+    .whatsapp-float::before,
     .whatsapp-float::after {
-        right: 53px;
+        display: none !important;
     }
-    .whatsapp-float:hover::before {
-        right: 70px;
+}
+/* =============================================
+   NAVBAR DROPDOWN
+   ============================================= */
+.dropdown-menu {
+    background: var(--surface-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    min-width: 200px;
+    margin-top: 8px !important;
+}
+
+/* Desktop Dropdown Animation */
+@media (min-width: 992px) {
+    .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+        transition: all 0.3s ease-out;
+        pointer-events: none;
     }
-    .whatsapp-float:hover::after {
-        right: 58px;
+    .dropdown-menu.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
     }
+}
+
+.dropdown-item {
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background: transparent;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active {
+    background: rgba(212,175,55,0.1);
+    color: var(--accent-color);
+    padding-left: 25px; /* Slight slide right on hover */
+}
+
+.nav-links .dropdown-toggle::after {
+    border: none;
+    content: '\f107';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.75rem;
+    margin-left: 5px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.nav-links .dropdown.show .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+/* Mobile dropdown animated */
+@media (max-width: 991.98px) {
+    .dropdown-menu {
+        display: block;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+        background: rgba(255, 255, 255, 0.03); 
+        border: none;
+        border-left: 2px solid var(--accent-color);
+        border-radius: 6px;
+        padding: 0; 
+        box-shadow: none;
+        margin: 5px 0 10px 10px !important; 
+    }
+    .dropdown-menu.show {
+        max-height: 300px;
+        opacity: 1;
+        visibility: visible;
+        padding: 10px 0 10px 15px;
+    }
+    .dropdown-item {
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+        font-size: 0.9rem;
+        transform: translateX(-15px);
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+    .dropdown-menu.show .dropdown-item {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .dropdown-item:nth-child(1) { transition-delay: 0.05s; }
+    .dropdown-item:nth-child(2) { transition-delay: 0.1s; }
+    .dropdown-item:nth-child(3) { transition-delay: 0.15s; }
+}
+
+/* =============================================
+   EMSAL KARAR KARTI
+   ============================================= */
+.emsal-card {
+    background: var(--surface-color);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 28px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: var(--transition);
+    backdrop-filter: blur(6px);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.emsal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--accent-color);
+    transition: height 0.4s ease;
+}
+
+.emsal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+    border-color: rgba(212,175,55,0.2);
+}
+
+.emsal-card:hover::before {
+    height: 100%;
+}
+
+.emsal-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.emsal-court-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.court-yargitay  { background: rgba(220,53,69,0.12); color: #ff6b7a; border: 1px solid rgba(220,53,69,0.25); }
+.court-danistay  { background: rgba(13,110,253,0.12); color: #6ea8fe; border: 1px solid rgba(13,110,253,0.25); }
+.court-aym       { background: rgba(212,175,55,0.12); color: var(--accent-color); border: 1px solid rgba(212,175,55,0.25); }
+.court-aihm      { background: rgba(25,135,84,0.12); color: #75b798; border: 1px solid rgba(25,135,84,0.25); }
+
+.emsal-hukuk-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.emsal-title {
+    font-size: 1.15rem;
+    color: var(--white);
+    line-height: 1.4;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.emsal-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.emsal-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.emsal-meta-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.emsal-meta-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.emsal-summary {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* =============================================
+   MAKALELERî & HABERLER
+   ============================================= */
+
+/* --- Filtre Çubuğu --- */
+.makale-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--text-muted);
+    border-radius: 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* --- Makale Kartı --- */
+.makale-card {
+    background: var(--surface-color);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: var(--transition);
+    backdrop-filter: blur(6px);
+    position: relative;
+    overflow: hidden;
+}
+
+.makale-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transition: width 0.4s ease;
+}
+
+.makale-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.makale-card:hover::after {
+    width: 100%;
+}
+
+.makale-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.makale-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+}
+
+.badge-ceza    { background: rgba(220, 53, 69, 0.15); color: #ff6b7a; border: 1px solid rgba(220,53,69,0.3); }
+.badge-idare   { background: rgba(13, 110, 253, 0.15); color: #6ea8fe; border: 1px solid rgba(13,110,253,0.3); }
+.badge-is      { background: rgba(25, 135, 84, 0.15); color: #75b798; border: 1px solid rgba(25,135,84,0.3); }
+.badge-aile    { background: rgba(111, 66, 193, 0.15); color: #c29ffa; border: 1px solid rgba(111,66,193,0.3); }
+.badge-anayasa { background: rgba(212, 175, 55, 0.15); color: var(--accent-color); border: 1px solid rgba(212,175,55,0.3); }
+
+.makale-type {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.makale-title {
+    font-size: 1.1rem;
+    color: var(--white);
+    line-height: 1.45;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.makale-excerpt {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.makale-meta {
+    display: flex;
+    gap: 18px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.makale-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.makale-read-more {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: var(--transition);
+    margin-top: auto;
+}
+
+.makale-read-more:hover {
+    color: var(--white);
+    gap: 12px;
+}
+
+.makale-add-note {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.makale-add-note i {
+    color: var(--accent-color);
+    font-size: 1rem;
+}
+
+/* --- Haberler Bölümü --- */
+.haber-section {
+    background: rgba(13, 27, 42, 0.4);
+    border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Featured Haber */
+.haber-featured {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    transition: var(--transition);
+}
+
+.haber-featured:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 60px rgba(0,0,0,0.5);
+}
+
+.haber-featured-img {
+    position: relative;
+    overflow: hidden;
+    max-height: 400px;
+}
+
+.haber-featured-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.haber-featured:hover .haber-featured-img img {
+    transform: scale(1.05);
+}
+
+.haber-featured-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.haber-featured-body {
+    background: var(--surface-color);
+    padding: 45px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+}
+
+.haber-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.haber-category-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(212,175,55,0.12);
+    color: var(--accent-color);
+    border: 1px solid rgba(212,175,55,0.25);
+    font-family: 'Inter', sans-serif;
+}
+
+.haber-date {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.haber-featured-title {
+    font-size: 1.6rem;
+    line-height: 1.35;
+    color: var(--white);
+    margin: 0;
+}
+
+.haber-featured-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* Haber Kartı */
+.haber-card {
+    background: var(--surface-color);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.haber-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+    border-color: rgba(212,175,55,0.15);
+}
+
+.haber-card-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.haber-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.haber-card:hover .haber-card-img img {
+    transform: scale(1.08);
+}
+
+.haber-card-img .haber-category-tag {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+}
+
+.haber-card-body {
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.haber-card-title {
+    font-size: 1.05rem;
+    color: var(--white);
+    line-height: 1.45;
+    margin: 0;
+}
+
+.haber-card-excerpt {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.haber-read-link {
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    font-family: 'Inter', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+    margin-top: 8px;
+}
+
+.haber-read-link:hover {
+    color: var(--white);
+    gap: 10px;
+}
+
+/* Responsive – Haberler */
+@media (max-width: 991.98px) {
+    .haber-featured {
+        grid-template-columns: 1fr;
+    }
+    .haber-featured-img {
+        max-height: 280px;
+    }
+    .haber-featured-body {
+        padding: 30px 25px;
+    }
+    .haber-featured-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .makale-filter-bar {
+        gap: 8px;
+    }
+    .filter-btn {
+        padding: 7px 15px;
+        font-size: 0.8rem;
+}
+
+/* =============================================
+   COOKIE BANNER
+   ============================================= */
+.cookie-banner {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 27, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 20px 0;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+    z-index: 1050;
+    transition: bottom 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cookie-banner.show {
+    bottom: 0;
+}
+
+.cookie-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cookie-text {
+    flex: 1;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.cookie-text a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 500;
+}
+
+.cookie-text i {
+    color: var(--accent-color);
+    margin-right: 8px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-cookie {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-cookie:hover {
+    background: #e6c55c;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 767.98px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =============================================
+   CUSTOM CHECKBOX (KVKK)
+   ============================================= */
+.kvkk-checkbox-label {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 15px !important;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--white);
+    line-height: 1.5;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.kvkk-checkbox-label span {
+    display: block !important;
+    flex: 1 !important;
+    text-align: left !important;
+}
+
+.kvkk-checkbox-label span a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.kvkk-checkbox-label input[type="checkbox"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background-color: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 3px !important; /* aligns with text visually */
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+    border: 2px solid var(--accent-color) !important;
+    border-radius: 4px !important;
+    position: relative !important;
+    cursor: pointer;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+    outline: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.kvkk-checkbox-label input[type="checkbox"]::after {
+    content: "✔";
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0) !important;
+    color: var(--bg-color) !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    transition: transform 0.2s ease-in-out !important;
+}
+
+.kvkk-checkbox-label input[type="checkbox"]:checked {
+    background-color: var(--accent-color) !important;
+}
+
+.kvkk-checkbox-label input[type="checkbox"]:checked::after {
+    transform: translate(-50%, -50%) scale(1) !important;
 }
