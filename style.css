@@ -132,12 +132,12 @@ header.scrolled {
     transform: scale(1.03);
 }
 
-/* Logo-text gizle â€” sadece gÃ¶rsel kullanÄ±lÄ±yor */
+/* Logo-text gizle — sadece görsel kullanılıyor */
 .logo-text {
     display: none;
 }
 
-/* Footer logo biraz daha bÃ¼yÃ¼k */
+/* Footer logo biraz daha büyük */
 footer .logo-img {
     height: 135px;
 }
@@ -473,7 +473,7 @@ footer .logo-img {
 }
 
 .features-list li::before {
-    content: 'âœ“';
+    content: '✔';
     color: var(--accent-color);
     margin-right: 15px;
     font-weight: bold;
@@ -695,6 +695,16 @@ footer {
     padding-left: 5px;
 }
 
+.footer-social ul li a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-social ul li a:hover {
+    color: var(--accent-color);
+}
+
 .social-icons {
     display: flex;
     gap: 15px;
@@ -751,7 +761,7 @@ footer {
 }
 
 /* =============================================
-   TABLET (â‰¤992px)
+   TABLET (≤992px)
    ============================================= */
 @media (max-width: 991.98px) {
     .logo-img {
@@ -784,7 +794,7 @@ footer {
 }
 
 /* =============================================
-   MOBÄ°L (â‰¤768px)
+   MOBİL (≤768px)
    ============================================= */
 @media (max-width: 767.98px) {
     .logo-img {
@@ -847,7 +857,7 @@ footer {
 }
 
 /* =============================================
-   KÃœÃ‡ÃœK MOBÄ°L (â‰¤480px)
+   KÜÇÜK MOBİL (≤480px)
    ============================================= */
 @media (max-width: 480px) {
     .logo-img {
@@ -922,7 +932,7 @@ footer {
 
 /* WhatsApp Text Bubble */
 .whatsapp-float::before {
-    content: "Randevu Ä°Ã§in TÄ±klayÄ±nÄ±z";
+    content: "Randevu İçin Tıklayınız";
     position: absolute;
     right: 75px; 
     top: 50%;
@@ -1222,10 +1232,10 @@ footer {
 }
 
 /* =============================================
-   MAKALELERÃ® & HABERLER
+   MAKALELER & HABERLER
    ============================================= */
 
-/* --- Filtre Ã‡ubuÄŸu --- */
+/* --- Filtre Çubuğu --- */
 .makale-filter-bar {
     display: flex;
     flex-wrap: wrap;
@@ -1254,7 +1264,7 @@ footer {
     color: var(--bg-color);
 }
 
-/* --- Makale KartÄ± --- */
+/* --- Makale Kartı --- */
 .makale-card {
     background: var(--surface-color);
     border: 1px solid rgba(255,255,255,0.05);
@@ -1390,7 +1400,7 @@ footer {
     font-size: 1rem;
 }
 
-/* --- Haberler BÃ¶lÃ¼mÃ¼ --- */
+/* --- Haberler Bölümü --- */
 .haber-section {
     background: rgba(13, 27, 42, 0.4);
     border-top: 1px solid rgba(255,255,255,0.04);
@@ -1497,7 +1507,7 @@ footer {
     margin: 0;
 }
 
-/* Haber KartÄ± */
+/* Haber Kartı */
 .haber-card {
     background: var(--surface-color);
     border: 1px solid rgba(255,255,255,0.05);
@@ -1577,7 +1587,7 @@ footer {
     gap: 10px;
 }
 
-/* Responsive â€“ Haberler */
+/* Responsive – Haberler */
 @media (max-width: 991.98px) {
     .haber-featured {
         grid-template-columns: 1fr;
