@@ -1,179 +1,268 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakımdayız | Arslan Hukuk & Danışmanlık</title>
-    <meta name="robots" content="noindex, nofollow">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #d4af37;
-            --dark: #0a0e17;
-            --text-light: #e2e8f0;
-            --text-dim: #94a3b8;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        body {
-            background-color: var(--dark);
-            color: var(--text-light);
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        /* Arkaplan Efektleri */
-        .bg-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(10, 14, 23, 0) 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            pointer-events: none;
-            animation: pulse 6s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 2rem;
-            max-width: 800px;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--gold);
-            margin-bottom: 3rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .logo-subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            color: var(--text-dim);
-            display: block;
-            margin-top: 0.5rem;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #fff, var(--text-dim));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            opacity: 0;
-            animation: fadeUp 1s ease 0.5s forwards;
-        }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: var(--text-dim);
-            margin-bottom: 3rem;
-            opacity: 0;
-            animation: fadeUp 1s ease 0.8s forwards;
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            opacity: 0;
-            animation: fadeUp 1s ease 1.1s forwards;
-        }
-
-        .contact-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: var(--text-light);
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-item:hover {
-            border-color: var(--gold);
-            background: rgba(212, 175, 55, 0.05);
-            transform: translateY(-3px);
-        }
-
-        .contact-item svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--gold);
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            .contact-info { flex-direction: column; gap: 1rem; }
-            .bg-glow { width: 400px; height: 400px; }
-        }
-    </style>
+    <title>ARSLAN Hukuk ve DanÄ±ÅŸmanlÄ±k | Av. Mustafa Emir Arslan</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="description" content="Avukat Mustafa Emir Arslan liderliÄŸinde ARSLAN Hukuk ve DanÄ±ÅŸmanlÄ±k bÃ¼rosu; Ceza Hukuku, Aile Hukuku ve Ä°dare Hukuku alanlarÄ±nda profesyonel hukuki destek sunar.">
+    <meta name="keywords" content="ceza avukatÄ±, eskiÅŸehir ceza avukatÄ±, eskiÅŸehir avukat, aÄŸÄ±r ceza avukatÄ± eskiÅŸehir, ceza hukuku eskiÅŸehir, eskiÅŸehir hukuk bÃ¼rosu">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://arslannhukuk.com.tr/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="ARSLAN Hukuk ve DanÄ±ÅŸmanlÄ±k | Av. Mustafa Emir Arslan">
+    <meta property="og:description" content="Avukat Mustafa Emir Arslan liderliÄŸinde ARSLAN Hukuk ve DanÄ±ÅŸmanlÄ±k bÃ¼rosu; Ceza Hukuku, Aile Hukuku ve Ä°dare Hukuku alanlarÄ±nda profesyonel hukuki destek sunar.">
+    <meta property="og:image" content="https://arslannhukuk.com.tr/assets/logo.png">
+    <meta property="og:url" content="https://arslannhukuk.com.tr/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "ARSLAN Hukuk ve DanÄ±ÅŸmanlÄ±k",
+      "image": "https://arslannhukuk.com.tr/assets/logo.png",
+      "url": "https://arslannhukuk.com.tr/",
+      "telephone": "+905366421458",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "KurtuluÅŸ Mahallesi, Cumhuriyet BulvarÄ±, No: 63 Kat: 3 Daire: 5, Sivriler Plaza",
+        "addressLocality": "OdunpazarÄ±",
+        "addressRegion": "EskiÅŸehir",
+        "addressCountry": "TR"
+      },
+      "areaServed": "EskiÅŸehir",
+      "keywords": "eskiÅŸehir ceza avukatÄ±, aÄŸÄ±r ceza avukatÄ± eskiÅŸehir, eskiÅŸehir hukuk bÃ¼rosu"
+    }
+    </script>
+    <!-- Google Fonts (preconnect for speed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="-B33b_EFkmxkenc03w7_HW93zOoQG8uKRRbSUZZQ7Bk" />
 </head>
 <body>
-    <div class="bg-glow"></div>
-    
-    <div class="container">
-        <div class="logo">
-            ARSLAN
-            <span class="logo-subtitle">HUKUK & DANIŞMANLIK</span>
-        </div>
 
-        <h1>Yakında...</h1>
-        
-        <p>Sizlere daha modern ve iyi bir deneyim sunabilmek için web sitemizi yeniliyoruz.<br>Kısa bir süre sonra tekrar hizmetinizde olacağız.</p>
+    <!-- NAVBAR -->
+    <header id="mainHeader">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg px-0">
+                <a href="index.html" class="logo navbar-brand logo-with-img">
+                    <img src="assets/logo.png" alt="ARSLAN Hukuk Logo" class="logo-img">
+                </a>
 
-        <div class="contact-info">
-            <a href="mailto:info@arslannhukuk.com.tr" class="contact-item">
-                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                info@arslannhukuk.com.tr
-            </a>
-            <!-- Telefon numarası eklenebilir -->
+                <button class="hamburger navbar-toggler border-0 shadow-none" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navMenu"
+                        aria-controls="navMenu" aria-expanded="false" aria-label="MenÃ¼yÃ¼ aÃ§">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="nav-links navbar-nav ms-auto">
+                        <li class="nav-item"><a href="index.html" class="nav-link active">Ana Sayfa</a></li>
+                        <li class="nav-item"><a href="hakkimizda.html" class="nav-link">HakkÄ±mÄ±zda</a></li>
+                        <li class="nav-item"><a href="ekibimiz.html" class="nav-link">Ekibimiz</a></li>
+                        <li class="nav-item"><a href="hizmetlerimiz.html" class="nav-link">Hizmetlerimiz</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="yayinlarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">YayÄ±nlar</a>
+                            <ul class="dropdown-menu" aria-labelledby="yayinlarDropdown">
+                                <li><a class="dropdown-item" href="makaleler.html">Makaleler</a></li>
+                                <li><a class="dropdown-item" href="emsal-kararlar.html">Emsal Kararlar</a></li>
+                                <li><a class="dropdown-item" href="haberler.html">Haberler</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="iletisim.html" class="nav-link">Ä°letiÅŸim</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-subtitle">Hukuki UyuÅŸmazlÄ±klarda Profesyonel Ã‡Ã¶zÃ¼m OrtaklÄ±ÄŸÄ±</span>
+                    <h1>Hukuki SÃ¼reÃ§lerinizde Yetkin ve GÃ¼venilir Temsil</h1>
+                    <p>Arslan Hukuk ve DanÄ±ÅŸmanlÄ±k olarak; ÅŸeffaflÄ±k, mesleki Ã¶zen ve avukatlÄ±k etiÄŸi kurallarÄ± Ã§erÃ§evesinde mÃ¼vekkillerimize stratejik hukuki danÄ±ÅŸmanlÄ±k ve dava takip hizmeti sunmaktayÄ±z.</p>
+                    <div class="hero-btns">
+                        <a href="iletisim.html" class="btn">Hukuki Destek AlÄ±n</a>
+                        <a href="hizmetlerimiz.html" class="btn btn-outline">Ã‡alÄ±ÅŸma AlanlarÄ±mÄ±z</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRIEF ABOUT -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-11">
+                        <div class="row g-5 align-items-center">
+                            
+                            <!-- Left: Title & Intro -->
+                            <div class="col-lg-5">
+                                <div class="section-title" style="text-align: left; margin-bottom: 30px;">
+                                    <span>HakkÄ±mÄ±zda</span>
+                                    <h2 style="font-size: 2.5rem; line-height: 1.2;">Av. Mustafa Emir Arslan</h2>
+                                </div>
+                                <p style="font-size: 1.15rem; color: var(--text-main); font-weight: 300; line-height: 1.8; margin-bottom: 0;">
+                                    Hukuk fakÃ¼ltesinden onur derecesiyle mezun olup meslek hayatÄ± boyunca evrensel hukuk prensipleri ve hakkÄ±n tesisi gayesiyle baÄŸÄ±msÄ±z savunma gÃ¶revini ifa etmektedir.
+                                </p>
+                            </div>
+                            
+                            <!-- Right: Glassmorphism Card with details -->
+                            <div class="col-lg-7">
+                                <div class="about-content" style="background: var(--surface-color); padding: 45px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
+                                    <p style="font-size: 1.05rem; line-height: 1.8;">Ã–zellikle Ceza Hukuku ve Ã–zel Hukuk uyuÅŸmazlÄ±klarÄ±nda uzmanlaÅŸan bÃ¼romuz, ulusal ve uluslararasÄ± mevzuat Ã§erÃ§evesinde, mÃ¼vekkil hassasiyetini Ã¶nceleyen ve sonuÃ§ eksenli hukuki Ã§Ã¶zÃ¼mler Ã¼retmektedir.</p>
+                                    
+                                    <div class="row mt-4">
+                                        <div class="col-sm-6">
+                                            <ul class="features-list mt-0 mb-sm-0">
+                                                <li>Etik ve DÃ¼rÃ¼st YaklaÅŸÄ±m</li>
+                                                <li>Åeffaf SÃ¼reÃ§ YÃ¶netimi</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <ul class="features-list mt-0">
+                                                <li>SonuÃ§ OdaklÄ± Stratejiler</li>
+                                                <li>MÃ¼vekkil GizliliÄŸi</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-4 pt-4 d-flex align-items-center" style="border-top: 1px solid rgba(212, 175, 55, 0.2);">
+                                        <a href="hakkimizda.html" class="btn">Daha Fazla Bilgi Edinin</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SUMMARY -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <span>Hizmetlerimiz</span>
+                    <h2>Ã‡alÄ±ÅŸma AlanlarÄ±mÄ±z</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card h-100">
+                            <div class="service-img-wrapper">
+                                <img src="assets/service_ceza.jpg" alt="Ceza Hukuku" loading="lazy">
+                            </div>
+                            <i class="fa-solid fa-gavel service-icon"></i>
+                            <h3>Ceza Hukuku</h3>
+                            <p>Kolluk ve savcÄ±lÄ±k sÃ¼reÃ§lerinden aÄŸÄ±r ceza mahkemelerindeki yargÄ±lamalara kadar etkin mÃ¼dafilik ve vekillik hizmeti sunmaktayÄ±z.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card h-100">
+                            <div class="service-img-wrapper">
+                                <img src="assets/service_aile.jpg" alt="Aile Hukuku" loading="lazy">
+                            </div>
+                            <i class="fa-solid fa-balance-scale service-icon"></i>
+                            <h3>Aile Hukuku</h3>
+                            <p>BoÅŸanma davalarÄ±, velayet, nafaka, mal rejimi tasfiyesi gibi hassas konularda profesyonel ve Ã§Ã¶zÃ¼mcÃ¼l danÄ±ÅŸmanlÄ±k.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-card h-100">
+                            <div class="service-img-wrapper">
+                                <img src="assets/service_idare.jpg" alt="Ä°dare Hukuku" loading="lazy">
+                            </div>
+                            <i class="fa-solid fa-building-columns service-icon"></i>
+                            <h3>Ä°dare Hukuku</h3>
+                            <p>Ä°dari iÅŸlemlere karÅŸÄ± iptal davalarÄ±, tam yargÄ± davalarÄ± ve idarenin eylemlerinden doÄŸan zararlarÄ±n tazmini konularÄ±nda tam destek.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="hizmetlerimiz.html" class="btn btn-outline">TÃ¼m Hizmetlerimizi GÃ¶rÃ¼n</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6 col-md-12">
+                    <div class="footer-about">
+                        <a href="index.html" class="logo logo-with-img">
+                            <img src="assets/logo.png" alt="ARSLAN Hukuk Logo" class="logo-img">
+                        </a>
+                        <p style="margin-top: 15px;">Arslan Hukuk ve DanÄ±ÅŸmanlÄ±k, mÃ¼vekkillerinin yasal hak ve menfaatlerini mer'i mevzuat hÃ¼kÃ¼mlerine ve hukukun genel ilkelerine uygun biÃ§imde en Ã¼st dÃ¼zeyde korumayÄ± taahhÃ¼t eder.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-links">
+                        <h4>HÄ±zlÄ± MenÃ¼</h4>
+                        <ul>
+                            <li><a href="index.html">Ana Sayfa</a></li>
+                            <li><a href="hakkimizda.html">HakkÄ±mÄ±zda</a></li>
+                            <li><a href="ekibimiz.html">Ekibimiz</a></li>
+                            <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+                            <li><a href="makaleler.html">Makaleler</a></li>
+                            <li><a href="emsal-kararlar.html">Emsal Kararlar</a></li>
+                            <li><a href="haberler.html">Haberler</a></li>
+                            <li><a href="iletisim.html">Ä°letiÅŸim</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-social">
+                        <h4>Bize UlaÅŸÄ±n</h4>
+                        <ul style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                            <li style="margin-bottom: 10px; line-height: 1.5;"><a href="https://www.google.com/maps?q=39.767203,30.531900" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot" style="color: var(--accent-color); margin-right: 10px;"></i> KurtuluÅŸ Mah. Cumhuriyet Bulv. No:63<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kat:3 Daire:5 OdunpazarÄ±/EskiÅŸehir</a></li>
+                            <li style="margin-bottom: 10px;"><a href="tel:02224792669"><i class="fa-solid fa-phone" style="color: var(--accent-color); margin-right: 10px;"></i> 0222 479 26 69</a></li>
+                            <li style="margin-bottom: 10px;"><i class="fa-solid fa-mobile-screen" style="color: var(--accent-color); margin-right: 10px;"></i> <a href="tel:+905366421458">+90 536 642 14 58</a> / <a href="tel:+905462264087">+90 546 226 40 87</a></li>
+                            <li><i class="fa-solid fa-envelope" style="color: var(--accent-color); margin-right: 10px;"></i> info@arslannhukuk.com.tr</li>
+                        </ul>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tbb-disclaimer">
+                Bu site, TÃ¼rkiye Barolar BirliÄŸi Reklam YasaÄŸÄ± YÃ¶netmeliÄŸi'nin ilgili maddelerine uygun olarak dÃ¼zenlenmiÅŸ olup, reklam amacÄ± taÅŸÄ±maz. 
+                Sitede paylaÅŸÄ±lan bilgiler hukuki mÃ¼talaa veya tavsiye niteliÄŸinde deÄŸildir.
+                &copy; 2026 Arslan Hukuk ve DanÄ±ÅŸmanlÄ±k. TÃ¼m HaklarÄ± SaklÄ±dÄ±r.
+                &nbsp;|&nbsp; <a href="kvkk.html" style="color: var(--accent-color);">KVKK AydÄ±nlatma Metni</a>
+                &nbsp;|&nbsp; <a href="cerez-politikasi.html" style="color: var(--accent-color);">Ã‡erez PolitikasÄ±</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/905462264087" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Ä°letiÅŸim">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
+
+
