@@ -2,4 +2,3 @@
 Allow: /
 
 Sitemap: https://arslannhukuk.com.tr/sitemap.xml
-
