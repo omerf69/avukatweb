@@ -1,4 +1,5 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://www.arslannhukuk.com.tr/sitemap.xml
+Sitemap: https://arslannhukuk.com.tr/sitemap.xml
+
