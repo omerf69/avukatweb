@@ -26,6 +26,7 @@ Sistem birbiriyle entegre çalışan çeşitli modern platformlar üzerine kurul
 - **Performans ve SEO:**
   - Resimlerin tamamı yeni nesil **WebP** formatına çevrilmiştir (Daha hızlı sayfa yüklenmesi için).
   - Arama motoru dostu `sitemap.xml` ve `robots.txt` dosyaları aktiftir.
+  - **Sitemap Bilgisi:** Sitenin sitemap haritası `https://arslannhukuk.com.tr/sitemap.xml` adresinde çalışmaktadır. Sayfaların Google'da hızlı indeks alması için bu link **Google Search Console** hesabına eklenmiştir/eklenmelidir.
 
 ---
 
