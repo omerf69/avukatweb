@@ -105,4 +105,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ── Formspree AJAX Submission ─────────────────────────────────────────────
+    const iletisimFormu = document.getElementById('iletisimFormu');
+    if (iletisimFormu) {
+        iletisimFormu.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent Formspree redirect
+            const submitBtn = iletisimFormu.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Gönderiliyor...";
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(iletisimFormu.action, {
+                    method: 'POST',
+                    body: new FormData(iletisimFormu),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.');
+                    iletisimFormu.reset();
+                } else {
+                    alert('Mesajınız gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+                }
+            } catch (error) {
+                alert('Bağlantı hatası oluştu. Lütfen internetinizi kontrol edip tekrar deneyin.');
+            } finally {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
 });
