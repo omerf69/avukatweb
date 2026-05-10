@@ -72,8 +72,25 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
+    // ── Google Analytics Load Logic ──────────────────────────────────────────
+    function loadGoogleAnalytics() {
+        if(document.getElementById('gtag-script')) return;
+        const script = document.createElement('script');
+        script.id = 'gtag-script';
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-3E25T5PT6M';
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3E25T5PT6M');
+    }
+
     // ── Cookie Banner Logic ──────────────────────────────────────────────────
-    if (!localStorage.getItem('cookieConsent')) {
+    if (localStorage.getItem('cookieConsent') === 'true') {
+        loadGoogleAnalytics();
+    } else {
         const cookieHTML = `
             <div id="cookieBanner" class="cookie-banner">
                 <div class="container cookie-content">
@@ -98,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('acceptCookies')?.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'true');
+            loadGoogleAnalytics();
             const banner = document.getElementById('cookieBanner');
             if (banner) {
                 banner.classList.remove('show');
